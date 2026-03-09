@@ -14,17 +14,26 @@ const buildLinkClass = ({ isActive }) => {
 export const App = () => {
   return (
     <div>
-      <nav className={css.nav}>
-        <NavLink to="/" className={buildLinkClass}>
-          Home
-        </NavLink>
-        <NavLink to="/about" className={buildLinkClass}>
-          About
-        </NavLink>
-        <NavLink to="/products" className={buildLinkClass}>
-          Products
-        </NavLink>
-      </nav>
+      <header className={css.header}>
+        <p className={css.logo}>
+          <span role="img" aria-label="computer icon">
+            💻
+          </span>{" "}
+          GoMerch Store
+        </p>
+
+        <nav className={css.nav}>
+          <NavLink to="/" className={buildLinkClass}>
+            Home
+          </NavLink>
+          <NavLink to="/about" className={buildLinkClass}>
+            About
+          </NavLink>
+          <NavLink to="/products" className={buildLinkClass}>
+            Products
+          </NavLink>
+        </nav>
+      </header>
 
       <Routes>
         <Route path="/" element={<Home />} />
