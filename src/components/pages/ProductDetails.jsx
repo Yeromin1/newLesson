@@ -12,6 +12,10 @@ export default function ProductDetails() {
   const { id } = useParams();
   const product = getProductById(id);
 
+  if (!product) {
+    return <h2>Product not found</h2>;
+  }
+
   return (
     <main>
       <img src="https://via.placeholder.com/960x240" alt="" />
