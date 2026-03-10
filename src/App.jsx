@@ -9,6 +9,7 @@ import { About } from "./components/pages/About";
 import { Team } from "./components/subpages/Team";
 import { Mission } from "./components/subpages/Mission";
 import { Reviews } from "./components/subpages/Reviews";
+import { HomePage } from "./components/pages/HomePage";
 
 const buildLinkClass = ({ isActive }) => {
   return clsx(css.link, isActive && css.active);
@@ -39,6 +40,7 @@ export const App = () => {
       </header>
 
       <Routes>
+        {/* <Route path="/" element={<HomePage />} /> */}
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />}>
           <Route path="mission" element={<Mission />} />
