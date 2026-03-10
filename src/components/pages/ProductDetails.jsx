@@ -18,7 +18,10 @@ export default function ProductDetails() {
 
   return (
     <main>
-      <img src="https://via.placeholder.com/960x240" alt="" />
+      <img
+        src="https://images.unsplash.com/photo-1506744038136-46273834b3fb"
+        alt=""
+      />
       <div>
         <h2>
           Product - {product.name} - {id}

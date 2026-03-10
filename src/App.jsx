@@ -10,34 +10,12 @@ import { Team } from "./components/subpages/Team";
 import { Mission } from "./components/subpages/Mission";
 import { Reviews } from "./components/subpages/Reviews";
 import { HomePage } from "./components/pages/HomePage";
-
-const buildLinkClass = ({ isActive }) => {
-  return clsx(css.link, isActive && css.active);
-};
+import { AppBar } from "../AppBar";
 
 export const App = () => {
   return (
     <div>
-      <header className={css.header}>
-        <p className={css.logo}>
-          <span role="img" aria-label="computer icon">
-            💻
-          </span>{" "}
-          GoMerch Store
-        </p>
-
-        <nav className={css.nav}>
-          <NavLink to="/" className={buildLinkClass}>
-            Home
-          </NavLink>
-          <NavLink to="/about" className={buildLinkClass}>
-            About
-          </NavLink>
-          <NavLink to="/products" className={buildLinkClass}>
-            Products
-          </NavLink>
-        </nav>
-      </header>
+      <AppBar />
 
       <Routes>
         {/* <Route path="/" element={<HomePage />} /> */}
@@ -48,7 +26,7 @@ export const App = () => {
           <Route path="reviews" element={<Reviews />} />
         </Route>
         <Route path="/products" element={<Products />} />
-        <Route path="/products/:productId" element={<ProductDetails />} />
+        <Route path="/products/:id" element={<ProductDetails />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
