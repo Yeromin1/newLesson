@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 import { getProductById } from "../../fakeApi";
 
 // const ProductDetails = () => {
@@ -11,6 +11,9 @@ import { getProductById } from "../../fakeApi";
 export default function ProductDetails() {
   const { id } = useParams();
   const product = getProductById(id);
+
+  const location = useLocation();
+  const backLinkHref = location.state ?? "/products";
 
   if (!product) {
     return <h2>Product not found</h2>;
@@ -35,6 +38,8 @@ export default function ProductDetails() {
           praesentium ipsum quos unde voluptatum?
         </p>
       </div>
+
+      <Link to={backLinkHref}>Back to products</Link>
     </main>
   );
 }

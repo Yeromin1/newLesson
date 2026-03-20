@@ -1,8 +1,9 @@
+import { Suspense } from "react";
 import { Link, Outlet } from "react-router-dom";
-export const About = () => {
+export default function About() {
   return (
-    <div>
-      <h1>About</h1>
+    <main>
+      <h1>About Us</h1>
       <ul>
         <li>
           <Link to="mission">Read about our mission</Link>
@@ -14,7 +15,10 @@ export const About = () => {
           <Link to="reviews">Go through the reviews</Link>
         </li>
       </ul>
-      <Outlet />
-    </div>
+
+      <Suspense fallback={<div>Loading subpage...</div>}>
+        <Outlet />
+      </Suspense>
+    </main>
   );
-};
+}
